@@ -169,7 +169,7 @@ class Str
     public function replace($array, $language, $string)
     {
 
-    	$array = (is_null($language) ? $array[key($array)]:$array[$language]);
+    	$array = (is_null($language) ? $array[key($array)] : $array[$language]);
     	
 		$string = str_replace(array_keys($array), array_values($array), $string);
 
