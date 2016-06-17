@@ -36,35 +36,35 @@ class StrTest extends PHPUnit
 	/** @test */
 	public function its_create_slug()
 	{
-		$str = Str::create('Jānis Kalniņš');
+		$str = Str::create('Janis Kalnins');
 
-	    $this->assertEquals('Janis-Kalnins', $str->latin()->slug()->get());
-	    $this->assertEquals('Janis-Kalnins', $str->latin()->slug('-')->get());
+	    $this->assertEquals('Janis-Kalnins', $str->slug()->get());
+	    $this->assertEquals('Janis-Kalnins', $str->slug('-')->get());
 	}
 
 	/** @test */
 	public function its_trim_before_create_slug()
 	{
-		$str = Str::create("Jānis   Kalniņš \n");
+		$str = Str::create("Janis     Kalnins \n");
 
-	    $this->assertEquals('Janis-Kalnins', $str->latin()->slug()->get());
-	    $this->assertEquals('Janis-Kalnins', $str->latin()->slug('-')->get());
+	    $this->assertEquals('Janis-Kalnins', $str->slug()->get());
+	    $this->assertEquals('Janis-Kalnins', $str->slug('-')->get());
 	}
 
 	/** @test */
 	public function its_make_lowercase_string()
 	{
-	    $str = Str::create('Jānis Kalniņš');
+	    $str = Str::create('Janis Kalnins');
 
-	    $this->assertEquals('janis kalnins', $str->latin()->lowercase()->get());
+	    $this->assertEquals('janis kalnins', $str->lowercase()->get());
 	}
 
 	/** @test */
 	public function its_make_uppercase_string()
 	{
-	    $str = Str::create('Jānis Kalniņš');
+	    $str = Str::create('Janis Kalnins');
 
-	    $this->assertEquals('JANIS KALNINS', $str->latin()->uppercase()->get());
+	    $this->assertEquals('JANIS KALNINS', $str->uppercase()->get());
 	}
 
 }

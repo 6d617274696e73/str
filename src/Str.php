@@ -125,7 +125,7 @@ class Str
     {
     	// Trim before replace whitespace with $symbol
     	$string = trim($this->string);
-    	$symbol = (is_null($symbol) ? '-' : $symbol);
+    	$symbol = $symbol ?: '-';
     	
     	// Replace all whitespace with $symbol
     	$this->string = preg_replace('/\s+/', $symbol, $string);
@@ -169,7 +169,7 @@ class Str
     public function replace($array, $language, $string)
     {
 
-    	$array = (is_null($language) ? $array[key($array)] : $array[$language]);
+    	$array = is_null($language) ? $array[key($array)] : $array[$language];
     	
 		$string = str_replace(array_keys($array), array_values($array), $string);
 
