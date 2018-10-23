@@ -171,7 +171,7 @@ class Str
 
     	$array = is_null($language) ? $array[key($array)] : $array[$language];
     	
-		$string = str_replace(array_keys($array), array_values($array), $string);
+	$string = str_replace(array_keys($array), array_values($array), $string);
 
         return $string;
     }
